@@ -1,33 +1,6 @@
-
 const findClosestValueInBst = require('./ClosestValueInBst');
+const BST = require('../BstConstruction/BstConstruction');
 const assert = require('assert');
-
-
-
-class BST {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-
-  insert(value) {
-    if (value < this.value) {
-      if (this.left === null) {
-        this.left = new BST(value);
-      } else {
-        this.left.insert(value);
-      }
-    } else {
-      if (this.right === null) {
-        this.right = new BST(value);
-      } else {
-        this.right.insert(value);
-      }
-    }
-    return this;
-  }
-}
 
 const test = new BST(100)
   .insert(5)
@@ -56,29 +29,32 @@ const test = new BST(100)
   .insert(60)
   .insert(4500);
 
-describe('Binary Search Tree', function(){
-    describe('Closest Value', function(){
-        it('return target when it exists in bst', function (){
-
-            assert.equal(findClosestValueInBst(test,100), 100);
-            assert.equal(findClosestValueInBst(test,208), 208);
-            assert.equal(findClosestValueInBst(test,4500), 4500);
-        })
+describe('Binary Search Tree', function () {
+  describe('Closest Value', function () {
+    it('Test #1', function () {
+      assert.deepEqual(findClosestValueInBst(test, 100), 100);
     })
+    it('Test #2', function () {
+      assert.deepEqual(findClosestValueInBst(test, 208), 208);   
+    })
+    it('Test #3', function () {
+      assert.deepEqual(findClosestValueInBst(test, 4500), 4500);
+    })
+    it('Test #4', function () {
+      assert.deepEqual(findClosestValueInBst(test, 4501), 4500);
+    })
+    it('Test #5', function () {
+      assert.deepEqual(findClosestValueInBst(test, -70), -51);
+    })
+    it('Test #6', function () {
+      assert.deepEqual(findClosestValueInBst(test, 2000), 1001);
+    })
+    it('Test #7', function () {
+      assert.deepEqual(findClosestValueInBst(test, 6), 5);
+    })
+    it('Test #8', function () {
+      assert.deepEqual(findClosestValueInBst(test, -1), 1);
+    })
+  })
 
 })
-describe('Binary Search Tree', function(){
-    describe('Closest Value', function(){
-        it('return  closest value less or greater than target in bst', function (){
-
-            assert.equal(findClosestValueInBst(test,4501), 4500);
-            assert.equal(findClosestValueInBst(test,-70), -51);
-            assert.equal(findClosestValueInBst(test, 2000), 1001);
-            assert.equal(findClosestValueInBst(test, 6), 5);
-            assert.equal(findClosestValueInBst(test, -1), 1);
-        })
-    })
-
-})
-
-
