@@ -17,8 +17,6 @@ const depthFirstSearchHelper = (node, array) =>  {
     array.push(node.name);
     for(let i=0; i < node.children.length; i++)
         depthFirstSearchHelper(node.children[i],array);
-    
-
     return array;
 };
 
