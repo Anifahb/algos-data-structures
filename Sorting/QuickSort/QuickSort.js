@@ -1,4 +1,3 @@
-//worst/avg cast O(1) space and O(n2) time
 
 const quickSort = array => {
 
