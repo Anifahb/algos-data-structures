@@ -1,9 +1,11 @@
+
 {
   "name": "algos-data-structures",
   "version": "1.0.0",
-  "description": "A project containing my implemetation of various algorithms and data structures",
+  "description": "A project containing my implementation of various algorithms and data structures",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint",
     "test": "mocha **/*.test.js"
   },
   "repository": {
@@ -17,6 +19,9 @@
   },
   "homepage": "https://github.com/Anie96/Algos-Data-Structures#readme",
   "devDependencies": {
-    "mocha": "^7.0.1"
+    "mocha": "^7.0.1",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3"
   }
 }
