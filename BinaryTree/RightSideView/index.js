@@ -1,5 +1,6 @@
-var rightSideView = function (root) {
-  if (root === null) return [];
+function rightSideView(root) {
+  if (root === null)
+    return [];
   const rightSideView = [];
   const trasversalQueue = [root];
 
@@ -11,9 +12,11 @@ var rightSideView = function (root) {
         rightSideView.push(currentNode.val);
       }
 
-      if (currentNode.left) trasversalQueue.push(currentNode.left);
-      if (currentNode.right) trasversalQueue.push(currentNode.right);
+      if (currentNode.left)
+        trasversalQueue.push(currentNode.left);
+      if (currentNode.right)
+        trasversalQueue.push(currentNode.right);
     }
   }
   return rightSideView;
-};
+}
